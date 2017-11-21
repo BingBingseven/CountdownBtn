@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>倒计时</title>
+    <style type=text/css>
+        input {
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="发送" id="sendBtn" onclick="countTime(this)">
+
+    <script>
+        var wait = 15;
+
+        function countTime(val) {
+            if (wait == 0) {
+                val.removeAttribute("disabled");
+                val.value = "发送";
+                wait = 15;
+            } else {
+                val.setAttribute("disabled", true);
+                val.value = wait + "s后重新发送";
+                wait--;
+            }
+            setTimeout(function() {
+                countTime(val);
+            }, 1000);
+
+        }
+    </script>
+</body>
+
+</html>
