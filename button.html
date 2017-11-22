@@ -23,6 +23,7 @@
                 val.removeAttribute("disabled");
                 val.value = "发送";
                 wait = 15;
+                return;
             } else {
                 val.setAttribute("disabled", true);
                 val.value = wait + "s后重新发送";
